@@ -1,54 +1,23 @@
 def length_convert(value, from_unit, to_unit):
-
+    # Define conversion factors relative to meters
     conversions = {
-        "meter": {
-            "kilometer": value / 1000,
-            "centimeter": value * 100,
-            "millimeter": value * 1000,
-            "micrometer": value * 1e6,
-            "nanometer": value * 1e9,
-        },
-        "kilometer": {
-            "meter": value * 1000,
-            "centimeter": value * 100000,
-            "millimeter": value * 1e6,
-            "micrometer": value * 1e9,
-            "nanometer": value * 1e12,
-        },
-        "centimeter": {
-            "meter": value / 100,
-            "kilometer": value / 100000,
-            "millimeter": value * 10,
-            "micrometer": value * 1e4,
-            "nanometer": value * 1e7,
-        },
-        "millimeter": {
-            "meter": value / 1000,
-            "kilometer": value / 1e6,
-            "centimeter": value / 10,
-            "micrometer": value * 1000,
-            "nanometer": value * 1e6,
-        },
-        "micrometer": {
-            "meter": value / 1e6,
-            "kilometer": value / 1e9,
-            "centimeter": value / 1e4,
-            "millimeter": value / 1000,
-            "nanometer": value * 1000,
-        },
-        "nanometer": {
-            "meter": value / 1e9,
-            "kilometer": value / 1e12,
-            "centimeter": value / 1e7,
-            "millimeter": value / 1e6,
-            "micrometer": value / 1000,
-        },
+        "meter": 1,
+        "kilometer": 1e3,
+        "centimeter": 1e-2,
+        "millimeter": 1e-3,
+        "micrometer": 1e-6,
+        "nanometer": 1e-9,
     }
 
-    if from_unit in conversions and to_unit in conversions[from_unit]:
-        return conversions[from_unit][to_unit]
-    else:
-        return None
+    # Check if units are valid
+    if from_unit not in conversions or to_unit not in conversions:
+        raise ValueError("Unsupported unit")
+
+    # Convert from 'from_unit' to meters, then from meters to 'to_unit'
+    value_in_meters = value * conversions[from_unit]
+    converted_value = value_in_meters / conversions[to_unit]
+
+    return converted_value
 
 
 def temp_convert(value, from_unit, to_unit):

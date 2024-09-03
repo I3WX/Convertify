@@ -1,5 +1,4 @@
 def length_convert(value, from_unit, to_unit):
-    # Define conversion factors relative to meters
     conversions = {
         "meter": 1,
         "kilometer": 1e3,
@@ -9,11 +8,9 @@ def length_convert(value, from_unit, to_unit):
         "nanometer": 1e-9,
     }
 
-    # Check if units are valid
     if from_unit not in conversions or to_unit not in conversions:
         raise ValueError("Unsupported unit")
 
-    # Convert from 'from_unit' to meters, then from meters to 'to_unit'
     value_in_meters = value * conversions[from_unit]
     converted_value = value_in_meters / conversions[to_unit]
 

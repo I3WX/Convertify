@@ -2,6 +2,10 @@ from flask import Flask, request, jsonify
 from conveter import *
 from flask_cors import CORS
 
+
+with open("README.md", "r", encoding="utf-8") as readme_file:
+    readme = readme_file.read()
+
 app = Flask(__name__)
 
 CORS(app)
@@ -9,7 +13,7 @@ CORS(app)
 
 @app.route("/")
 def index():
-    return "the url is suppose to be like this 'http://localhost:5000/convert?type=length&value=100&from=meter&to=kilometer'"
+    return readme
 
 
 @app.route("/convert", methods=["GET"])

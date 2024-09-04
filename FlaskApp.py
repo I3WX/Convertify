@@ -3,7 +3,7 @@ from conveter import *
 from flask_cors import CORS
 
 
-with open("README.md", "r", encoding="utf-8") as readme_file:
+with open("readme.md", "r", encoding="utf-8") as readme_file:
     readme = readme_file.read()
 
 app = Flask(__name__)

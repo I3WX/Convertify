@@ -4,7 +4,7 @@ from flask_cors import CORS
 import markdown
 
 
-with open("README.md", "r", encoding="utf-8") as readme_file:
+with open("readme.md", "r", encoding="utf-8") as readme_file:
     readme = markdown.markdown(readme_file.read())
 
 app = Flask(__name__)

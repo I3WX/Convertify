@@ -1,3 +1,5 @@
+
+
 ### Convertify API Documentation
 
 **Base URL**: [https://convertify-a8r6.onrender.com](https://convertify-a8r6.onrender.com)
@@ -36,7 +38,12 @@ https://convertify-a8r6.onrender.com/convert?type=temp&value=18&from=C&to=F
    **Response**:
    ```json
    {
-     "result": 0.1
+     "result": {
+       "converted_value": 0.1,
+       "from": "meter",
+       "to": "kilometer",
+       "value": 100.0
+     }
    }
    ```
 
@@ -52,7 +59,12 @@ https://convertify-a8r6.onrender.com/convert?type=temp&value=18&from=C&to=F
    **Response**:
    ```json
    {
-     "result": 64.4
+     "result": {
+       "converted_value": 64.4,
+       "from": "C",
+       "to": "F",
+       "value": 18.0
+     }
    }
    ```
 
@@ -68,7 +80,12 @@ https://convertify-a8r6.onrender.com/convert?type=temp&value=18&from=C&to=F
    **Response**:
    ```json
    {
-     "result": 1.23553
+     "result": {
+       "converted_value": 1.23553,
+       "from": "square_meters",
+       "to": "acres",
+       "value": 5000.0
+     }
    }
    ```
 
@@ -84,7 +101,12 @@ https://convertify-a8r6.onrender.com/convert?type=temp&value=18&from=C&to=F
    **Response**:
    ```json
    {
-     "result": 62.137
+     "result": {
+       "converted_value": 62.137,
+       "from": "km/h",
+       "to": "mph",
+       "value": 100.0
+     }
    }
    ```
 
@@ -100,7 +122,12 @@ https://convertify-a8r6.onrender.com/convert?type=temp&value=18&from=C&to=F
    **Response**:
    ```json
    {
-     "result": 4.40925
+     "result": {
+       "converted_value": 4.40925,
+       "from": "grams",
+       "to": "pounds",
+       "value": 2000.0
+     }
    }
    ```
 
@@ -116,7 +143,12 @@ https://convertify-a8r6.onrender.com/convert?type=temp&value=18&from=C&to=F
    **Response**:
    ```json
    {
-     "result": 4.88281
+     "result": {
+       "converted_value": 4.88281,
+       "from": "kilobytes",
+       "to": "megabytes",
+       "value": 5000.0
+     }
    }
    ```
 
@@ -152,3 +184,5 @@ Visit the API at `http://localhost:5000`.
 
 ### Conclusion
 The Convertify API provides a robust and flexible way to convert between various units, with easy-to-use endpoints and support for multiple data types.
+
+---
